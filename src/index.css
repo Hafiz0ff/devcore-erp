@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Surfaces */
+  --color-canvas: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8f9fb;
+  --color-border: #e3e6eb;
+  --color-border-strong: #cdd2db;
+
+  /* Ink */
+  --color-ink-900: #10151f;
+  --color-ink-700: #2a3242;
+  --color-ink-500: #667085;
+  --color-ink-400: #98a2b3;
+
+  /* Brand / graphite-navy */
+  --color-brand-950: #0d131d;
+  --color-brand-900: #131b28;
+  --color-brand-800: #1b2430;
+  --color-brand-700: #263243;
+  --color-brand-600: #344257;
+  --color-brand-100: #e7eaf0;
+
+  /* Gold accent (secondary) */
+  --color-gold-600: #b8871f;
+  --color-gold-500: #d9a53a;
+  --color-gold-100: #faf1de;
+
+  /* Status */
+  --color-positive-700: #0d6b4c;
+  --color-positive-600: #12805c;
+  --color-positive-100: #e4f4ee;
+
+  --color-risk-700: #9c2b23;
+  --color-risk-600: #c0362c;
+  --color-risk-100: #fbeae8;
+
+  --color-warn-700: #925609;
+  --color-warn-600: #b5680d;
+  --color-warn-100: #fbf0dd;
+
+  --color-info-700: #164a80;
+  --color-info-600: #1d5fa8;
+  --color-info-100: #e7f0fb;
+
+  --color-violet-700: #5b21b6;
+  --color-violet-600: #7c3aed;
+  --color-violet-100: #efe7fd;
+
+  --color-cyan-700: #0e6e6e;
+  --color-cyan-600: #0e8a8a;
+  --color-cyan-100: #e2f5f5;
+
+  --shadow-card: 0 1px 2px 0 rgb(16 21 31 / 0.04), 0 1px 1px 0 rgb(16 21 31 / 0.03);
+  --shadow-panel: 0 4px 16px -4px rgb(16 21 31 / 0.10), 0 2px 6px -2px rgb(16 21 31 / 0.06);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  .tnum {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-ink-400); }
+
+  :focus-visible {
+    outline: 2px solid var(--color-info-600);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none { scrollbar-width: none; }
+}
